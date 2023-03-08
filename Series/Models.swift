@@ -42,5 +42,5 @@ class MovieDeviceModel: Object {
 }
 
 class MovieDeviceGenreModel: Object {
-    @objc dynamic var genre: String = String()
+    @objc dynamic var genreName: String = String()
 }

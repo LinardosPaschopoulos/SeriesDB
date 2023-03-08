@@ -1,34 +1,32 @@
 //
-//  MovieTableViewCell.swift
-//  myMovieDataBase
+//  MovieCollectionViewCell.swift
+//  Series
 //
-//  Created by Linardos Paschopoulos on 27/1/23.
+//  Created by Linardos Paschopoulos on 8/3/23.
 //
 
 import UIKit
 import RealmSwift
 
-protocol MovieTableViewCellDelegate: AnyObject {
+protocol MovieCollectionViewCellDelegate: AnyObject {
     func showMovieDetails(indexPath: Int)
 }
 
-class MovieTableViewCell: UITableViewCell {
+class MovieCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var movieImageView: UIImageView!
     
-    weak var delegate: MovieTableViewCellDelegate?
+    weak var delegate: MovieCollectionViewCellDelegate?
     private var rowOfIndexPath: Int?
-    static let cellId = "MovieTableViewCell"
+    static let cellId = "MovieCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func update(movieData: MovieModel?, indexPath: Int, delegate: MovieTableViewCellDelegate) {
+    func update(movieData: MovieModel?, indexPath: Int, delegate: MovieCollectionViewCellDelegate) {
         self.backgroundColor = .white
-        self.selectionStyle = .none
-
         self.rowOfIndexPath = indexPath
         self.delegate = delegate
         self.nameLabel.text = movieData?.name
@@ -40,10 +38,8 @@ class MovieTableViewCell: UITableViewCell {
         }
     }
     
-    func update(movieData: MovieDeviceModel?, indexPath: Int, delegate: MovieTableViewCellDelegate) {
+    func update(movieData: MovieDeviceModel?, indexPath: Int, delegate: MovieCollectionViewCellDelegate) {
         self.backgroundColor = .white
-        self.selectionStyle = .none
-
         self.rowOfIndexPath = indexPath
         self.delegate = delegate
         self.nameLabel.text = movieData?.name

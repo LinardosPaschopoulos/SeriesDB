@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     var loadDataFromCall = true
     var myMoviesModel: [MovieModel]?
     var myMoviesDeviceModel: [MovieDeviceModel]?
+    var genres = Set<String>()
     lazy var realm: Realm = {
         return try! Realm()
     }()
@@ -46,8 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
                         self.loadDataFromCall = true
                         self.movieApiModelToMovieModel(movieApiModel: jsonData)
-                        self.tableView.reloadData()
                         self.saveDataToDevice()
+                        self.tableView.reloadData()
                     } catch {
                         print(error.localizedDescription)
                         self.loadDataFromCall = false
@@ -113,10 +114,11 @@ class ViewController: UIViewController, UITableViewDataSource {
                 movie.genres?.forEach({ genre in
                     let movieDeviceGenreModel = MovieDeviceGenreModel()
                     
-                    movieDeviceGenreModel.genre = genre
+                    movieDeviceGenreModel.genreName = genre
                     movieDeviceModel.genres.append(movieDeviceGenreModel)
+                    self.genres.insert(genre)
                 })
-
+                
                 self.realm.add(movieDeviceModel)
             })
 
@@ -141,6 +143,11 @@ class ViewController: UIViewController, UITableViewDataSource {
             tempMovieDeviceModel.premiered = movie.premiered
             tempMovieDeviceModel.imageOnDevice = movie.imageOnDevice
             tempMovieDeviceModel.ended = movie.ended
+            tempMovieDeviceModel.genres = movie.genres
+            
+            tempMovieDeviceModel.genres.forEach({genre in
+                self.genres.insert(genre.genreName)
+            })
             
             moviesDeviceArray.append(tempMovieDeviceModel)
         }
@@ -175,8 +182,6 @@ extension ViewController: MovieTableViewCellDelegate {
                 let movieDetailViewController = MovieDetailsViewController(movie: movie.name, officialSite: movie.url ,premiere: movie.premiered, summary: movie.summary, ended: movie.ended)
                 
                 navigationController?.pushViewController(movieDetailViewController, animated: true)
-//                movieDetailViewController.modalPresentationStyle = .fullScreen
-//                self.present(movieDetailViewController, animated: true, completion: nil)
             } else {
                 showAlert()
             }
@@ -186,11 +191,8 @@ extension ViewController: MovieTableViewCellDelegate {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.loadDataFromCall {
-            return self.myMoviesModel?.count ?? 0
-        } else {
-            return self.myMoviesDeviceModel?.count ?? 0
-        }
+        print("The genres.count is \(self.genres.count)")
+        return self.genres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -204,4 +206,23 @@ extension ViewController: UITableViewDelegate {
         
         return cell
     }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if self.loadDataFromCall {
+//            return self.myMoviesModel?.count ?? 0
+//        } else {
+//            return self.myMoviesDeviceModel?.count ?? 0
+//        }
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellId) as! MovieTableViewCell
+//
+//        if self.loadDataFromCall {
+//            cell.update(movieData: myMoviesModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
+//        } else {
+//            cell.update(movieData: myMoviesDeviceModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
+//        }
+//
+//        return cell
+//    }
 }
