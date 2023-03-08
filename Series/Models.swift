@@ -16,6 +16,7 @@ struct MovieApiModel: Codable {
     var summary: String?
     var premiered: String?
     var ended: String?
+    var genres: [String]?
 }
 
 struct MovieModel {
@@ -26,6 +27,7 @@ struct MovieModel {
     var summary: String?
     var premiered: String?
     var ended: String?
+    var genres: [String]?
 }
 
 class MovieDeviceModel: Object {
@@ -36,4 +38,9 @@ class MovieDeviceModel: Object {
     @objc dynamic var summary: String = String()
     @objc dynamic var premiered: String = String()
     @objc dynamic var ended: String = String()
+    var genres = List<MovieDeviceGenreModel>()
+}
+
+class MovieDeviceGenreModel: Object {
+    @objc dynamic var genre: String = String()
 }
