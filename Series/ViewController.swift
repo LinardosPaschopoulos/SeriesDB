@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             tempMovie.summary = movie.summary
             tempMovie.premiered = movie.premiered
             tempMovie.ended = movie.ended
+            tempMovie.genres = movie.genres
 
             guard let url = URL(string: (movie.image?["medium"] ?? "") ?? "") else {
                 return
@@ -109,6 +110,12 @@ class ViewController: UIViewController, UITableViewDataSource {
                 movieDeviceModel.premiered = movie.premiered ?? ""
                 movieDeviceModel.ended = movie.ended ?? "not available"
                 movieDeviceModel.imageOnDevice = movie.image?.jpegData(compressionQuality: 1.0) as NSData? ?? NSData()
+                movie.genres?.forEach({ genre in
+                    let movieDeviceGenreModel = MovieDeviceGenreModel()
+                    
+                    movieDeviceGenreModel.genre = genre
+                    movieDeviceModel.genres.append(movieDeviceGenreModel)
+                })
 
                 self.realm.add(movieDeviceModel)
             })
