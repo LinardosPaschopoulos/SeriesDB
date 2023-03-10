@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,9 +44,8 @@
                     <constraint firstItem="tsd-cJ-qXF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="tmR-CT-aDK"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="genreCollectionView" destination="zYm-an-Gei" id="aS3-F8-dzM"/>
+                <outlet property="collectionView" destination="zYm-an-Gei" id="aS3-F8-dzM"/>
                 <outlet property="genreLabel" destination="tsd-cJ-qXF" id="vjC-Lb-WGr"/>
             </connections>
             <point key="canvasLocation" x="268.1159420289855" y="162.38839285714286"/>

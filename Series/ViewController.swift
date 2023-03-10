@@ -28,9 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         view.backgroundColor = .white
         
-        let nib1 = UINib.init(nibName:  MovieTableViewCell.cellId, bundle: nil)
+        let nib1 = UINib.init(nibName: GenreTableViewCell.cellId, bundle: nil)
         
-        self.tableView.register(nib1, forCellReuseIdentifier:  MovieTableViewCell.cellId)
+        self.tableView.register(nib1, forCellReuseIdentifier:  GenreTableViewCell.cellId)
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
@@ -156,12 +156,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.tableView.reloadData()
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "Error!", message: "Movie not found.", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func refreshView(_ sender: Any) {
         self.fetchData(url: "https://api.tvmaze.com/shows?fbclid=IwAR2RFhaxaktLBvQ7rV1OTq47psl5ke3zUxcG9isnnsBsISJKpDfTSP4rI18")
     }
@@ -175,7 +169,7 @@ extension ViewController: MovieTableViewCellDelegate {
                 
                 navigationController?.pushViewController(movieDetailViewController, animated: true)
             } else {
-                showAlert()
+                // showAlert()
             }
         } else {
             if let movie = myMoviesDeviceModel?[indexPath] {
@@ -183,7 +177,7 @@ extension ViewController: MovieTableViewCellDelegate {
                 
                 navigationController?.pushViewController(movieDetailViewController, animated: true)
             } else {
-                showAlert()
+                // showAlert()
             }
         }
     }
@@ -191,38 +185,22 @@ extension ViewController: MovieTableViewCellDelegate {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("The genres.count is \(self.genres.count)")
         return self.genres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellId) as! MovieTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GenreTableViewCell.cellId) as! GenreTableViewCell
         
         if self.loadDataFromCall {
-            cell.update(movieData: myMoviesModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
+            if let movies = myMoviesModel {
+                cell.updateWithMovieModel(movieArray: movies, genre: Array(genres)[indexPath.row], loadDataFromCall: loadDataFromCall)
+            }
         } else {
-            cell.update(movieData: myMoviesDeviceModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
+            if let movies = myMoviesDeviceModel {
+                cell.updateWithMovieDeviceModel(movieArray: movies, genre: Array(genres)[indexPath.row], loadDataFromCall: loadDataFromCall)
+            }
         }
         
         return cell
     }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if self.loadDataFromCall {
-//            return self.myMoviesModel?.count ?? 0
-//        } else {
-//            return self.myMoviesDeviceModel?.count ?? 0
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellId) as! MovieTableViewCell
-//
-//        if self.loadDataFromCall {
-//            cell.update(movieData: myMoviesModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
-//        } else {
-//            cell.update(movieData: myMoviesDeviceModel?[indexPath.row], indexPath: indexPath.row, delegate: self)
-//        }
-//
-//        return cell
-//    }
 }
