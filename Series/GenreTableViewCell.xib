@@ -13,33 +13,34 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="253" id="KGk-i7-Jjw" customClass="GenreTableViewCell" customModule="Series" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="508" height="253"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="508" height="253"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zYm-an-Gei" userLabel="Genre Collection View">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" id="zYm-an-Gei" userLabel="Genre Collection View">
                         <rect key="frame" x="20" y="52.5" width="468" height="189.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zaL-fm-gIE">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="22b-CI-9fa">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsd-cJ-qXF">
-                        <rect key="frame" x="32" y="16" width="444" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsd-cJ-qXF">
+                        <rect key="frame" x="32" y="0.0" width="444" height="52.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tsd-cJ-qXF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="6Dn-dx-DGX"/>
+                    <constraint firstItem="tsd-cJ-qXF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6Dn-dx-DGX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="zYm-an-Gei" secondAttribute="trailing" id="Av3-bg-k4A"/>
                     <constraint firstAttribute="bottomMargin" secondItem="zYm-an-Gei" secondAttribute="bottom" id="CwZ-WT-oCO"/>
                     <constraint firstAttribute="trailing" secondItem="tsd-cJ-qXF" secondAttribute="trailing" constant="32" id="NER-4r-bBO"/>
-                    <constraint firstItem="zYm-an-Gei" firstAttribute="top" secondItem="tsd-cJ-qXF" secondAttribute="bottom" constant="16" id="av0-uD-6gl"/>
+                    <constraint firstItem="zYm-an-Gei" firstAttribute="top" secondItem="tsd-cJ-qXF" secondAttribute="bottom" id="av0-uD-6gl"/>
                     <constraint firstItem="zYm-an-Gei" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gmO-nD-Jnd"/>
                     <constraint firstItem="tsd-cJ-qXF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="tmR-CT-aDK"/>
                 </constraints>

@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var loadDataFromCall = true
@@ -161,29 +161,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 }
 
-extension ViewController: MovieTableViewCellDelegate {
-    func showMovieDetails(indexPath: Int) {
-        if loadDataFromCall {
-            if let movie = myMoviesModel?[indexPath] {
-                let movieDetailViewController = MovieDetailsViewController(movie: movie.name, officialSite: movie.url ,premiere: movie.premiered, summary: movie.summary, ended: movie.ended)
-                
-                navigationController?.pushViewController(movieDetailViewController, animated: true)
-            } else {
-                // showAlert()
-            }
-        } else {
-            if let movie = myMoviesDeviceModel?[indexPath] {
-                let movieDetailViewController = MovieDetailsViewController(movie: movie.name, officialSite: movie.url ,premiere: movie.premiered, summary: movie.summary, ended: movie.ended)
-                
-                navigationController?.pushViewController(movieDetailViewController, animated: true)
-            } else {
-                // showAlert()
-            }
-        }
-    }
-}
-
-extension ViewController: UITableViewDelegate {
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.genres.count
     }

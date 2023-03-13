@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,38 +11,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Series" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="742" height="439"/>
+            <rect key="frame" x="0.0" y="0.0" width="501" height="215"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="742" height="439"/>
+                <rect key="frame" x="0.0" y="0.0" width="501" height="215"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nQ-iz-jNi" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="44" width="742" height="361"/>
+                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nQ-iz-jNi" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="501" height="215"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-r2-ASt" userLabel="Movie Image View">
-                                <rect key="frame" x="16" y="16" width="84" height="118"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-r2-ASt" userLabel="Movie Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="buc-Dr-qMh"/>
                                     <constraint firstAttribute="height" constant="118" id="sGu-o3-2Kk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-sG-Rsk" userLabel="Name Label">
-                                <rect key="frame" x="116" y="32" width="610" height="204.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-sG-Rsk" userLabel="Name Label">
+                                <rect key="frame" x="100" y="0.0" width="401" height="122.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQe-0U-RcN" userLabel="Rating Label">
-                                <rect key="frame" x="116" y="252.5" width="610" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQe-0U-RcN" userLabel="Rating Label">
+                                <rect key="frame" x="100" y="138.5" width="385" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="MiT-k6-ApK" userLabel="Button View">
-                                <rect key="frame" x="361" y="305" width="120" height="24"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="24" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiT-k6-ApK" userLabel="Button View">
+                                <rect key="frame" x="232.5" y="191" width="120" height="24"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqd-9B-g6z" userLabel="Details Button">
+                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqd-9B-g6z" userLabel="Details Button">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -67,33 +66,33 @@
                         <constraints>
                             <constraint firstItem="OQe-0U-RcN" firstAttribute="top" secondItem="61A-sG-Rsk" secondAttribute="bottom" constant="16" id="GcD-T7-SrN"/>
                             <constraint firstItem="61A-sG-Rsk" firstAttribute="leading" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="LZP-di-LBf"/>
-                            <constraint firstItem="KjD-r2-ASt" firstAttribute="leading" secondItem="8nQ-iz-jNi" secondAttribute="leading" constant="16" id="Nq9-Zh-gJd"/>
+                            <constraint firstItem="KjD-r2-ASt" firstAttribute="leading" secondItem="8nQ-iz-jNi" secondAttribute="leading" id="Nq9-Zh-gJd"/>
                             <constraint firstItem="MiT-k6-ApK" firstAttribute="centerX" secondItem="OQe-0U-RcN" secondAttribute="centerX" id="Zfw-zV-NK6"/>
-                            <constraint firstAttribute="bottom" secondItem="MiT-k6-ApK" secondAttribute="bottom" constant="32" id="aY3-c4-LGG"/>
-                            <constraint firstItem="KjD-r2-ASt" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" constant="16" id="bC1-cR-mOb"/>
+                            <constraint firstAttribute="bottom" secondItem="MiT-k6-ApK" secondAttribute="bottom" id="aY3-c4-LGG"/>
+                            <constraint firstItem="KjD-r2-ASt" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" id="bC1-cR-mOb"/>
                             <constraint firstAttribute="trailing" secondItem="OQe-0U-RcN" secondAttribute="trailing" constant="16" id="gta-8A-AnH"/>
-                            <constraint firstAttribute="trailing" secondItem="61A-sG-Rsk" secondAttribute="trailing" constant="16" id="hSD-vh-Hp7"/>
-                            <constraint firstItem="61A-sG-Rsk" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" constant="32" id="hch-Cu-nBE"/>
+                            <constraint firstItem="61A-sG-Rsk" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" id="hch-Cu-nBE"/>
+                            <constraint firstAttribute="trailing" secondItem="61A-sG-Rsk" secondAttribute="trailing" id="jns-W1-z30"/>
                             <constraint firstItem="OQe-0U-RcN" firstAttribute="leading" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="o5g-V1-rOK"/>
                             <constraint firstItem="MiT-k6-ApK" firstAttribute="top" secondItem="OQe-0U-RcN" secondAttribute="bottom" constant="32" id="ual-y0-06f"/>
+                            <constraint firstItem="MiT-k6-ApK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="xbj-vU-nt9"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="8nQ-iz-jNi" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="BRF-CO-gd3"/>
-                <constraint firstItem="8nQ-iz-jNi" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="C2V-yN-WyX"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="8nQ-iz-jNi" secondAttribute="trailing" id="FOk-IK-R7Q"/>
-                <constraint firstItem="8nQ-iz-jNi" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="ICT-WV-3ud"/>
+                <constraint firstItem="8nQ-iz-jNi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BRF-CO-gd3"/>
+                <constraint firstItem="8nQ-iz-jNi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="C2V-yN-WyX"/>
+                <constraint firstAttribute="trailing" secondItem="8nQ-iz-jNi" secondAttribute="trailing" id="FOk-IK-R7Q"/>
+                <constraint firstItem="8nQ-iz-jNi" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="ICT-WV-3ud"/>
             </constraints>
-            <size key="customSize" width="742" height="439"/>
+            <size key="customSize" width="501" height="215"/>
             <connections>
                 <outlet property="movieImageView" destination="KjD-r2-ASt" id="vdK-Nu-nd8"/>
                 <outlet property="nameLabel" destination="61A-sG-Rsk" id="YYu-7Q-b3B"/>
                 <outlet property="ratingLabel" destination="OQe-0U-RcN" id="7O2-Hm-ex7"/>
             </connections>
-            <point key="canvasLocation" x="633.33333333333337" y="167.07589285714286"/>
+            <point key="canvasLocation" x="458.69565217391306" y="159.70982142857142"/>
         </collectionViewCell>
     </objects>
     <resources>

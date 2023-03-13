@@ -15,15 +15,6 @@ class GenreTableViewCell: UITableViewCell {
     var myMoviesModel = [MovieModel]()
     var myMoviesDeviceModel = [MovieDeviceModel]()
     static let cellId = "GenreTableViewCell"
-
-    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -102,19 +93,18 @@ extension GenreTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension GenreTableViewCell: MovieCollectionViewCellDelegate {
     func showMovieDetails(indexPath: Int) {
-        func showMovieDetails(indexPath: Int) {
-            if loadDataFromCall {
-                let movieDetailViewController = MovieDetailsViewController(movie: myMoviesModel[indexPath].name, officialSite: myMoviesModel[indexPath].url ,premiere: myMoviesModel[indexPath].premiered, summary: myMoviesModel[indexPath].summary, ended: myMoviesModel[indexPath].ended)
-                    print("ONE OF THESE DAYS...")
-                    // navigationController?.pushViewController(movieDetailViewController, animated: true)
+        if loadDataFromCall {
+            let movieDetailViewController = MovieDetailsViewController(movie: myMoviesModel[indexPath].name, officialSite: myMoviesModel[indexPath].url ,premiere: myMoviesModel[indexPath].premiered, summary: myMoviesModel[indexPath].summary, ended: myMoviesModel[indexPath].ended)
+            let navigationController = self.window?.rootViewController as! UINavigationController
+            
+            navigationController.pushViewController(movieDetailViewController, animated: true)
 
-            } else {
+        } else {
 
-                    let movieDetailViewController = MovieDetailsViewController(movie: myMoviesDeviceModel[indexPath].name, officialSite: myMoviesDeviceModel[indexPath].url ,premiere: myMoviesDeviceModel[indexPath].premiered, summary: myMoviesDeviceModel[indexPath].summary, ended: myMoviesDeviceModel[indexPath].ended)
-                    print("ONE OF THESE DAYS...")
-                    // navigationController?.pushViewController(movieDetailViewController, animated: true)
-
-            }
+            let movieDetailViewController = MovieDetailsViewController(movie: myMoviesDeviceModel[indexPath].name, officialSite: myMoviesDeviceModel[indexPath].url ,premiere: myMoviesDeviceModel[indexPath].premiered, summary: myMoviesDeviceModel[indexPath].summary, ended: myMoviesDeviceModel[indexPath].ended)
+            let navigationController = self.window?.rootViewController as! UINavigationController
+            
+            navigationController.pushViewController(movieDetailViewController, animated: true)
         }
     }
 }
