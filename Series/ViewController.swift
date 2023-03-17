@@ -11,6 +11,7 @@ import RealmSwift
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var loadDataFromCall = true
     var myMoviesModel: [MovieModel]?
@@ -33,8 +34,13 @@ class ViewController: UIViewController {
         self.tableView.register(nib1, forCellReuseIdentifier:  GenreTableViewCell.cellId)
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.activityIndicatorView.color = .black
+        self.activityIndicatorView.style = .large
+        self.activityIndicatorView.startAnimating()
+        
 
-        fetchData(url: "https://api.tvmaze.com/shows?fbclid=IwAR2RFhaxaktLBvQ7rV1OTq47psl5ke3zUxcG9isnnsBsISJKpDfTSP4rI18")
+        self.fetchData(url: "https://api.tvmaze.com/shows?fbclid=IwAR2RFhaxaktLBvQ7rV1OTq47psl5ke3zUxcG9isnnsBsISJKpDfTSP4rI18")
     }
     
     func fetchData(url: String) {
@@ -44,22 +50,28 @@ class ViewController: UIViewController {
                 case .success(let data):
                     do {
                         let jsonData = try JSONDecoder().decode([MovieApiModel].self, from: data!)
-
+                        
                         self.loadDataFromCall = true
                         self.movieApiModelToMovieModel(movieApiModel: jsonData)
                         self.saveDataToDevice()
                         self.tableView.reloadData()
+                        self.activityIndicatorView.stopAnimating()
+                        self.activityIndicatorView.isHidden = true
                     } catch {
                         print(error.localizedDescription)
                         self.loadDataFromCall = false
                         self.loadDataFromDevice()
                         self.tableView.reloadData()
+                        self.activityIndicatorView.stopAnimating()
+                        self.activityIndicatorView.isHidden = true
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.loadDataFromCall = false
                     self.loadDataFromDevice()
                     self.tableView.reloadData()
+                    self.activityIndicatorView.stopAnimating()
+                    self.activityIndicatorView.isHidden = true
             }
         }
     }
@@ -154,6 +166,8 @@ class ViewController: UIViewController {
 
         self.myMoviesDeviceModel = moviesDeviceArray
         self.tableView.reloadData()
+        self.activityIndicatorView.stopAnimating()
+        self.activityIndicatorView.isHidden = true
     }
     
     @IBAction func refreshView(_ sender: Any) {

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Series" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Series" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="501" height="215"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -34,13 +34,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQe-0U-RcN" userLabel="Rating Label">
-                                <rect key="frame" x="100" y="138.5" width="385" height="20.5"/>
+                                <rect key="frame" x="100" y="138.5" width="401" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="24" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiT-k6-ApK" userLabel="Button View">
-                                <rect key="frame" x="232.5" y="191" width="120" height="24"/>
+                                <rect key="frame" x="240.5" y="191" width="120" height="24"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqd-9B-g6z" userLabel="Details Button">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="24"/>
@@ -67,12 +67,12 @@
                             <constraint firstItem="OQe-0U-RcN" firstAttribute="top" secondItem="61A-sG-Rsk" secondAttribute="bottom" constant="16" id="GcD-T7-SrN"/>
                             <constraint firstItem="61A-sG-Rsk" firstAttribute="leading" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="LZP-di-LBf"/>
                             <constraint firstItem="KjD-r2-ASt" firstAttribute="leading" secondItem="8nQ-iz-jNi" secondAttribute="leading" id="Nq9-Zh-gJd"/>
+                            <constraint firstAttribute="trailing" secondItem="61A-sG-Rsk" secondAttribute="trailing" id="T6T-M0-KKU"/>
                             <constraint firstItem="MiT-k6-ApK" firstAttribute="centerX" secondItem="OQe-0U-RcN" secondAttribute="centerX" id="Zfw-zV-NK6"/>
                             <constraint firstAttribute="bottom" secondItem="MiT-k6-ApK" secondAttribute="bottom" id="aY3-c4-LGG"/>
                             <constraint firstItem="KjD-r2-ASt" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" id="bC1-cR-mOb"/>
-                            <constraint firstAttribute="trailing" secondItem="OQe-0U-RcN" secondAttribute="trailing" constant="16" id="gta-8A-AnH"/>
+                            <constraint firstAttribute="trailing" secondItem="OQe-0U-RcN" secondAttribute="trailing" id="gta-8A-AnH"/>
                             <constraint firstItem="61A-sG-Rsk" firstAttribute="top" secondItem="8nQ-iz-jNi" secondAttribute="top" id="hch-Cu-nBE"/>
-                            <constraint firstAttribute="trailing" secondItem="61A-sG-Rsk" secondAttribute="trailing" id="jns-W1-z30"/>
                             <constraint firstItem="OQe-0U-RcN" firstAttribute="leading" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="o5g-V1-rOK"/>
                             <constraint firstItem="MiT-k6-ApK" firstAttribute="top" secondItem="OQe-0U-RcN" secondAttribute="bottom" constant="32" id="ual-y0-06f"/>
                             <constraint firstItem="MiT-k6-ApK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KjD-r2-ASt" secondAttribute="trailing" constant="16" id="xbj-vU-nt9"/>

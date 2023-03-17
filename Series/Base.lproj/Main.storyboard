@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,17 +11,17 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myMovieDataBase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Series" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EsS-jt-Rou">
-                                <rect key="frame" x="0.0" y="88" width="414" height="726"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="848"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-6i-OdV">
-                                <rect key="frame" x="170" y="814" width="74" height="48"/>
+                                <rect key="frame" x="170" y="848" width="74" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="alg-rE-6Uo"/>
                                 </constraints>
@@ -32,20 +31,24 @@
                                     <action selector="refreshView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9JO-c2-2fD"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="medium" id="AUg-xx-zTC">
+                                <rect key="frame" x="0.0" y="398" width="414" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="e8N-6i-OdV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AA6-SF-Kao"/>
+                            <constraint firstItem="e8N-6i-OdV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AA6-SF-Kao"/>
                             <constraint firstItem="e8N-6i-OdV" firstAttribute="top" secondItem="EsS-jt-Rou" secondAttribute="bottom" id="eTL-Jz-gCb"/>
-                            <constraint firstItem="e8N-6i-OdV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f0r-dL-qMl"/>
-                            <constraint firstItem="EsS-jt-Rou" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fUE-zd-LZh"/>
-                            <constraint firstItem="EsS-jt-Rou" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lac-Zu-QVQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EsS-jt-Rou" secondAttribute="trailing" id="wPX-mw-5MR"/>
+                            <constraint firstItem="e8N-6i-OdV" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="f0r-dL-qMl"/>
+                            <constraint firstItem="EsS-jt-Rou" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fUE-zd-LZh"/>
+                            <constraint firstItem="EsS-jt-Rou" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lac-Zu-QVQ"/>
+                            <constraint firstAttribute="trailing" secondItem="EsS-jt-Rou" secondAttribute="trailing" id="wPX-mw-5MR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3qa-8g-SKf"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="AUg-xx-zTC" id="3N3-XJ-HYA"/>
                         <outlet property="tableView" destination="EsS-jt-Rou" id="42f-uq-R7X"/>
                     </connections>
                 </viewController>
